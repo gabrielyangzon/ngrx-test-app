@@ -1,0 +1,26 @@
+<div class="container">
+   
+
+    <div class="row">
+        <div class="col">
+             <div>Current Count: {{ count | async }}</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary" (click)="increment()">Increment</button>
+        </div>
+
+        <div class="col-3">
+             <button class="btn btn-secondary" (click)="decrement()">Decrement</button>
+       </div>
+
+     <div class="col">
+         <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
+      </div>
+
+      
+    </div>
+    
+</div>
