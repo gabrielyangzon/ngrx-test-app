@@ -30,7 +30,7 @@ export class AdvanceNgRxComponent implements OnInit {
 
   editText() {
    
-    this.store.dispatch(PostActions.Edit({title : this.text}))
+    this.store.dispatch(PostActions.Edit({title : this.text  }))
   }
 
   resetPost() {

@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ActionReducer, ActionReducerMap, StoreModule } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 
 import { MyCounterComponent } from './components/my-counter/my-counter.component';
 import { UsersComponent } from './components/users/users.component';

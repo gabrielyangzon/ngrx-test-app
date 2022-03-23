@@ -17,21 +17,7 @@ const _messageReducer = createReducer(
 
 
 export function messageReducer(state : string = initialState , action: Action){
-  //  console.log(state,action)
+  
         return _messageReducer(state , action)
 }
 
-// export function simpleReducer(state : string = "Hello world" , action :Action){
-
-//     switch(action.type){
-//         case "SPANISH":
-//             return state = 'Hola Mundo'
-//         case "FRENCH" :
-//             return state = 'Bonjour lemonde';
-//         case "ENGLISH":
-//             return state = 'Hello world';
-//         default:
-//             return state;
-
-//     }
-// }
