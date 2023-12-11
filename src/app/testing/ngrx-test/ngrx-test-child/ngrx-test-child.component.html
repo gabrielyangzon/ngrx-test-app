@@ -1,0 +1,8 @@
+<div *ngIf="(this.users$ | async)?.length !== 0; else empty">
+  <div *ngFor="let user of this.users$ | async">
+    id:{{ user.id }} , name:{{ user.name }}
+    <button (click)="delete(user.id)">Delete</button>
+  </div>
+</div>
+
+<ng-template #empty>No data</ng-template>

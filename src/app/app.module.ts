@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule  } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
 
@@ -16,10 +16,15 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { SimpleNgRxComponent } from './testing/simple-ng-rx/simple-ng-rx.component'
+import { SimpleNgRxComponent } from './testing/simple-ng-rx/simple-ng-rx.component';
 import { messageReducer } from './testing/simple-ng-rx/simple-ng-rx-reducer';
 import { postReducer } from './testing/advance-ng-rx/post.reducer';
 import { AdvanceNgRxComponent } from './testing/advance-ng-rx/advance-ng-rx.component';
+import { NgrxTestComponent } from './testing/ngrx-test/ngrx-test.component';
+import { userReducer } from './testing/ngrx-test/reducers';
+import { NgrxTestChildComponent } from './testing/ngrx-test/ngrx-test-child/ngrx-test-child.component';
+import { EffectsModule } from '@ngrx/effects';
+import { DataEffects } from './testing/ngrx-test/effects';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import { AdvanceNgRxComponent } from './testing/advance-ng-rx/advance-ng-rx.comp
     AddUserComponent,
     DashboardComponent,
     SimpleNgRxComponent,
-    AdvanceNgRxComponent
+    AdvanceNgRxComponent,
+    NgrxTestComponent,
+    NgrxTestChildComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,12 +45,14 @@ import { AdvanceNgRxComponent } from './testing/advance-ng-rx/advance-ng-rx.comp
     NgxChartsModule,
     BrowserAnimationsModule,
     FormsModule,
-    StoreModule.forRoot({ 
-       post : postReducer ,
-       message : messageReducer
-    })
+    StoreModule.forRoot({
+      post: postReducer,
+      message: messageReducer,
+      user: userReducer,
+    }),
+    EffectsModule.forRoot([DataEffects]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
