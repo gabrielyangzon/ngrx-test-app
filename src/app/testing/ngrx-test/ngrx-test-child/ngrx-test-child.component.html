@@ -2,6 +2,7 @@
   <div *ngFor="let user of this.users$ | async">
     id:{{ user.id }} , name:{{ user.name }}
     <button (click)="delete(user.id)">Delete</button>
+    <button (click)="edit(user.id, user)">Edit</button>
   </div>
 </div>
 

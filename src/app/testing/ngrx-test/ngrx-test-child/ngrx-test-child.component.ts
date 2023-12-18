@@ -12,16 +12,23 @@ import * as fromReducer from '../reducers';
 })
 export class NgrxTestChildComponent implements OnInit {
   users$: Observable<User[]>;
-  constructor(private store: Store<{ user: User[] }>) {}
+  constructor(private store: Store<{ user: User[]; product: {} }>) {}
 
   ngOnInit(): void {
     this.store.dispatch(fromAction.getAllUser());
     this.users$ = this.store.pipe(select((state) => state.user));
 
+    this.store.dispatch(fromAction.ProductsPageActions.gabrielChanged('gabbb'));
     //console.log(this.users$);
   }
 
   delete(id: number) {
     this.store.dispatch(fromAction.deleteUser({ id: id }));
+  }
+
+  edit(id: number, user: User) {
+    let userToEdit = user;
+
+    this.store.dispatch(fromAction.editUser({ user: userToEdit }));
   }
 }

@@ -21,7 +21,7 @@ import { messageReducer } from './testing/simple-ng-rx/simple-ng-rx-reducer';
 import { postReducer } from './testing/advance-ng-rx/post.reducer';
 import { AdvanceNgRxComponent } from './testing/advance-ng-rx/advance-ng-rx.component';
 import { NgrxTestComponent } from './testing/ngrx-test/ngrx-test.component';
-import { userReducer } from './testing/ngrx-test/reducers';
+import { ProductReducer, userReducer } from './testing/ngrx-test/reducers';
 import { NgrxTestChildComponent } from './testing/ngrx-test/ngrx-test-child/ngrx-test-child.component';
 import { EffectsModule } from '@ngrx/effects';
 import { DataEffects } from './testing/ngrx-test/effects';
@@ -49,6 +49,7 @@ import { DataEffects } from './testing/ngrx-test/effects';
       post: postReducer,
       message: messageReducer,
       user: userReducer,
+      product: ProductReducer,
     }),
     EffectsModule.forRoot([DataEffects]),
   ],
